@@ -18,3 +18,5 @@ lista.sort(function(a,b){
 /** filter - szűrés
  * megadhatsz egy szűrési feltétlet és a szerint fog szűrni
  */
+
+//Bea
