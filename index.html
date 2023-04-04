@@ -1,65 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="main.js" type="module"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Suhajda Bea</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="main.js" type="module"></script>
-  <link rel="stylesheet" href="style.css" />
-  <title>Gergely Patrícia</title>
-</head>
+  <body>
 
-<body>
-  <article>
-    <section class="kartyak"></section>
-    <section class="tablazat"></section>
-  </article>
-  <aside>
-    <form action="javascript:void(0)">
+    <article>
+      <section class="kartyak"></section>
+      <section class="tablazat"></section>
+    </article>
 
-      <fieldset>
-        <legend>Új Kutya</legend>
-
-        <div>
-          <label for="kneve">Kutya Neve:</label>
-          <input type="text" id="kneve" name="kneve" required pattern ="^[A-Z][a-zA-Z]{2,}$"/>
-        </div>
-        <div>
-          <label for="kkor">Kutya kora:</label>
-          <input type="number" id="kkor" name="kkor" />
-        </div>
-
-        <div>
-          <label for="kfajta">Kutya fajtája:</label>
-          <input type="text" id="kfajta" name="kfajta" />
-        </div>
-
-        <div>
-          <label for="klaba">Kutya Lábainak száma:</label>
-          <input type="number" min="0" max="6" value="4" id="klaba" name="klaba" />
-
-        </div>
-
-        
-
-
-
+    <aside>
+      <form action="javascript:void(0)">
         <fieldset>
-          <legend>Kutya neme:</legend>
-          <input type="radio" id="szuka" name="nem" value="szuka" />
-          <label for="szuka">Szuka</label>
-          <input type="radio" id="kan" name="nem" value="kan" />
-          <label for="kan">Kan</label><br />
+          <legend>Új virág</legend>
+          
+          <div class="main_container">
+
+            <div class="container1">
+
+              <div>
+                <label for="vnev">Név:</label>
+                <input type="text" id=vnev" name="vnev" required
+                pattern="^[A-Z][a-zA-Z]{2,}$"/>
+              </div>
+
+              <div>
+                <label for="vfajta">Fajta:</label>
+                <input type="text" id="vfajta" name="vfajta" />
+              </div>
+              
+              <div>
+              <label for="vmag">Magasság:</label>
+              <input type="number" id="vmag" name="vmag" value="10" /><span
+                >cm</span>
+              </div>
+
+              <div>
+                <label for="var">Ár:</label>
+                <input type="text" id="var" name="var" />
+              </div>
+
+            </div>
+
+            <!-- <div class="container2">
+              <fieldset>
+                <legend>Évszak:</legend>
+
+                <input type="radio" id="evszak" name="evszak" value="tavasz" checked/>
+                <label for="tavasz">Tavasz</label>
+
+                <input type="radio" id="evszak" name="evszak" value="nyar" />
+                <label for="nyar">Nyár</label>
+
+                <input type="radio" id="evszak" name="evszak" value="osz" />
+                <label for="osz">Ősz</label>
+
+                <input type="radio" id="evszak" name="evszak" value="tel" />
+                <label for="tel">Tél</label>
+
+              </fieldset>
+            </div> -->
+
+            <!-- <div class="container3">
+
+              <label for="vkontinens">Kontinens</label>
+              <input type="vkontinens" id="vkontinens" name="vkontinens"/>
+              <select name="vkontinens">
+                <option value="europa">Európa</option>
+                <option value="eamerika">Észak-Amerika</option>
+                <option value="damerika">Dél-Amerika</option>
+                <option value="azsia">Ázsia</option>
+                <option value="afrika">Afrika</option>
+                <option value="auszt">Ausztrália</option>
+              </select> -->
+
+              <label for="vorszag">Ország</label>
+              <input type="text" id="vorszag" name="vorszag" />
+
+            <!-- </div> -->
+
+            <div class="container4">
+              <input type="button" value="Rögzítés" id="rogzites" />
+            </div>
+            
+          </div>
+          
         </fieldset>
-        <label for="mmag">Kutya marmagasság:</label>
-        <input type="number" id="mmag" name="mmag" value="50" /><span>cm</span><br /><br />
-        <input type="button" value="Rögzítés" id="rogzites"><br />
+      </form>
+    </aside>
 
-      </fieldset>
 
-    </form>
-  </aside>
-</body>
-
+  </body>
 </html>

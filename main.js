@@ -1,6 +1,6 @@
-import { KUTYALISTA, KUTYAKULCS } from "./adat.js";
+import { VIRAGLISTA, VIRAGKULCS } from "./adat.js";
 import  { osszeallit, osszeallit2 } from "./adatkezeles.js";
-import  { rendezesBarmiSzerint} from "./rendezesSzures.js";
+// import  { rendezesBarmiSzerint} from "./rendezesSzures.js";
 window.addEventListener("load", init);
 
 let ARTICLE;
@@ -8,19 +8,19 @@ let kartyak;
 let tablazat;
 
 function init() {
-  rendezesBarmiSzerint(KUTYALISTA, "kor", -1)
-    console.log()
+  // rendezesBarmiSzerint(VIRAGLISTA, "kor", -1)
+  //   console.log()
   
   ARTICLE = document.querySelector("article");
   kartyak = document.querySelector("section.kartyak");
   tablazat = document.querySelector("section.tablazat");
-  kartyak.innerHTML = osszeallit(KUTYALISTA)
-  tablazat.innerHTML = osszeallit2(KUTYALISTA)
+  kartyak.innerHTML = osszeallit(VIRAGLISTA)
+  tablazat.innerHTML = osszeallit2(VIRAGLISTA)
 
 
   torlesGomb();
   const SUBMIT = document.querySelector("#rogzites");
-  SUBMIT.addEventListener("click", ujKutya);
+  SUBMIT.addEventListener("click", ujVirag);
 }
 
 
@@ -28,7 +28,7 @@ function init() {
 function torlesGomb() {
   const TR = document.querySelectorAll("tr");
 
-  for (let index = 0; index < KUTYALISTA.length; index++) {
+  for (let index = 0; index < VIRAGLISTA.length; index++) {
     const TD = document.createElement("td");
     const TORLES = document.createElement("button");
     TORLES.innerText = "Törlés";
@@ -41,18 +41,18 @@ function torlesGomb() {
 }
 
 function torlesFunkcio(index) {
-  KUTYALISTA.splice(index, 1);
-  kartyak.innerHTML = osszeallit(KUTYALISTA)
-  tablazat.innerHTML = osszeallit2(KUTYALISTA)
+  VIRAGLISTA.splice(index, 1);
+  kartyak.innerHTML = osszeallit(VIRAGLISTA)
+  tablazat.innerHTML = osszeallit2(VIRAGLISTA)
 
   torlesGomb();
 }
 
-function ujKutya() {
+function ujVirag() {
   //itt hozom létre  a listát amibe belepakolok majd mindent - NevInputElem...stb.
-  const kutya= {};
-  let szuka = document.querySelector("#szuka");
-  let kan = document.querySelector("#kan");
+  const virag= {};
+  //let szuka = document.querySelector("#szuka");
+  //let kan = document.querySelector("#kan");
   const ADAT = document.querySelectorAll("input");
   /**szedjük össze az űrlap adatait,
    * és tegyük bele egy objektumba 
@@ -60,41 +60,46 @@ function ujKutya() {
     */
 
   //megfogom a beviteli mezőt
-  const NevInputElem = document.querySelector("#kneve") 
+  const NevInputElem = document.querySelector("#vnev") 
   //beleteszem a már fentebb lértehozott listába a beírt adatokat
-  kutya.nev=NevInputElem.value;
+  virag.nev=NevInputElem.value;
 
-  const KorInputElem = document.querySelector("#kkor") 
-  kutya.kor=KorInputElem.value;
+  const FajtaInputElem = document.querySelector("#vfajta") 
+  virag.fajta=FajtaInputElem.value;
 
-  const FajtaInputElem = document.querySelector("#kfajta") 
-  kutya.fajta=FajtaInputElem.value;
+  const MagassagInputElem = document.querySelector("#vmag") 
+  virag.magassag=MagassagInputElem.value;
 
-  const LabInputElem = document.querySelector("#klaba") 
-  kutya.lab=FajtaInputElem.value;
+  const ArInputElem = document.querySelector("#var") 
+  virag.ar=ArInputElem.value;
 
-  const NemInputElem = document.querySelector("#szuka") 
-  if(NemInputElem.checked){
-    kutya.nem = "szuka"
-  }else{
-    kutya.nem = "kan"
-  }
+  // const EvszakInputElem = document.querySelector("#evszak") 
+  // if(EvszakInputElem.checked){
+  //   virag.evszak = "tavasz"
+  // }else if{
+  //   virag.evszak = "nyár"
+  // }
 
+  const KontinensInputElem = document.querySelector("#vkontinens") 
+  virag.kontinens=KontinensInputElem.value;
+
+  const OrszagInputElem = document.querySelector("#vorszag") 
+  virag.orszag=OrszagInputElem.value;
 
   
 
 
-  KUTYALISTA.push(kutya);
-  console.log(KUTYALISTA);
-  kartyak.innerHTML = osszeallit(KUTYALISTA)
-  tablazat.innerHTML = osszeallit2(KUTYALISTA)
+  VIRAGLISTA.push(virag);
+  console.log(VIRAGLISTA);
+  kartyak.innerHTML = osszeallit(VIRAGLISTA)
+  tablazat.innerHTML = osszeallit2(VIRAGLISTA)
 
   torlesGomb();
 }
 
 
 // let index = 0;
-// for (const kulcs in KUTYALISTA[index]) {
+// for (const kulcs in VIRAGLISTA[index]) {
 //   if (ADAT[index].id == "szuka" && (szuka.checked = true)) {
 //     console.log("szuka");
 //     Kutya[kulcs] = "szuka";
